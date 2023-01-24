@@ -1,11 +1,19 @@
+const express = require('express')
+//const handlebars = require('express-handlebars')
+const app = express()
+const port = 3001
+var { initializeApp } = require ('firebase/app');
+var {  getFirestore, query, collection, addDoc, getDoc, doc} = require ('firebase/firestore');
+import { getAuth, createUserWithEmailAndPassword, Date } from "firebase/auth";
 // Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+const firebaseConfig = {
+  apiKey: "AIzaSyBsJwdxi6aGSMQRhpCICnYZTKf5PFB8t18",
+  authDomain: "bgtracker-8c842.firebaseapp.com",
+  projectId: "bgtracker-8c842",
+  storageBucket: "bgtracker-8c842.appspot.com",
+  messagingSenderId: "882953037884",
+  appId: "1:882953037884:web:1f5484ed7840018934bb39",
+  measurementId: "G-2QW4F8ZD3H"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
