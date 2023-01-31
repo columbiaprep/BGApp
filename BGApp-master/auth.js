@@ -5,7 +5,7 @@ const app = express()
 const port = 3001
 var { initializeApp } = require ('firebase/app');
 var {  getFirestore, query, collection, addDoc, getDoc, doc} = require ('firebase/firestore');
-import { getAuth, createUserWithEmailAndPassword, Date } from "firebase/auth";
+var { getAuth, createUserWithEmailAndPassword } = require('firebase/auth')
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBsJwdxi6aGSMQRhpCICnYZTKf5PFB8t18",
@@ -17,13 +17,13 @@ const firebaseConfig = {
   measurementId: "G-2QW4F8ZD3H"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebase = initializeApp(firebaseConfig);
 // Initialize variables
-const auth = firebase.auth()
-const database = firebase.database()
+const auth = getAuth()
+const database = getFirestore()
 
 // Set up our register function
-function register () {
+function register() {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
@@ -66,7 +66,7 @@ function register () {
 }
 
 // Set up our login function
-function login () {
+function login() {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('password').value
@@ -105,6 +105,7 @@ function login () {
 
     alert(error_message)
   })
+  window.location.href = '/views/history'
 }
 
 
@@ -130,3 +131,5 @@ function validate_password(password) {
     return true
   }
 }
+
+module.exports = {login, register, validate_email, validate_password}

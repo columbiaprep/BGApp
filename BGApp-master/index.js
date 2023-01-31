@@ -7,6 +7,7 @@ const path = require('path')
 var hbs = require('hbs')
 var { initializeApp } = require('firebase/app');
 var { getFirestore, query, collection, addDoc, getDocs, getDoc, doc, where } = require('firebase/firestore');
+var { login, register, validate_email, validate_password } = require('./auth')
 // Import the functions you need from the SDKs you need
 
 
@@ -43,8 +44,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 app.get('/', async (req, res) => {
-  res.render('auth');
+  res.render('views/auth');
 
+})
+app.post('/', async (req, res) => {
+  console.log(req.params.name)
+  console.log(req.params.email)
+  console.log(req.params.psw)
+  
 })
 
 app.get('/login', (req, res) => {
@@ -73,7 +80,7 @@ app.get('/history', async (req, res) => {
     gameID.push(doc.data());
   });
   console.log(gameID)
-  res.render('views/history', gameID)
+  res.render('views/history', {gameID})
   //for(let i; i < myArray.length; i++){
   //if(myArray[i].player1ID.includes("dYtvzTYHZvfsxK74geWkgxQt3aj1") || myArray[i].player2ID.includes("dYtvzTYHZvfsxK74geWkgxQt3aj1")){
   //gameID = []

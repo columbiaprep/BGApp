@@ -1,7 +1,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF);
+    background: -webkit-linear-gradient(25deg, #685623, hsl(19, 59%, 30%), #FF006E, #462e68, #3e07a4);
 
     display: flex;
     justify-content: center;
@@ -100,14 +100,14 @@ input {
     border-bottom: 2px solid transparent;
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
-    border-image: -webkit-linear-gradient(25deg, #FFBE0B, #FB5607, #FF006E, #8338EC, #3A86FF) 1;
+    border-image: -webkit-linear-gradient(25deg, #7c672b, #934e2e, #863a5b, #4f307b, #864551) 1;
 }
 
 #button_container {
     width: 100%;
     height: 10%;
 
-    background-image: linear-gradient(80deg, #FFBE0B, #FB5607 50%, #FF006E 50%, #8338EC);
+    background-image: linear-gradient(80deg, #9b8446, #993b10 50%, #ff0000 50%, #8338EC);
     color: #fff;
 
     float: left;
